@@ -1,0 +1,154 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 90%;
+    --muted-foreground: 215 20% 65.1%;
+
+    --accent: 142 71% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.375rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --font-sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+
+    --shadow-cheap: 0 0 0 1px rgba(0,0,0,.08), 0 1px 3px rgba(0,0,0,.08);
+    --shadow-modal: 0 4px 24px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.06);
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 142 71% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 221 83% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+    line-height: 1.7;
+  }
+}
+
+@layer components {
+  .stage-container {
+    @apply mx-auto w-full;
+    max-width: 800px;
+  }
+
+  .phone-frame {
+    @apply mx-auto rounded-[2rem] border-4 border-foreground/80 overflow-hidden;
+    max-width: 375px;
+    aspect-ratio: 9/19;
+    box-shadow: var(--shadow-modal);
+  }
+
+  .browser-frame {
+    @apply mx-auto rounded-lg overflow-hidden border border-border;
+    max-width: 800px;
+    box-shadow: var(--shadow-cheap);
+  }
+
+  .browser-toolbar {
+    @apply flex items-center gap-2 px-3 py-2 bg-card border-b border-border;
+  }
+
+  .browser-dot {
+    @apply w-3 h-3 rounded-full;
+  }
+
+  .btn-primary-dark {
+    @apply bg-primary text-primary-foreground font-medium px-8 py-4 text-lg transition-transform;
+  }
+
+  .btn-hidden {
+    @apply text-muted-foreground underline text-sm cursor-pointer hover:text-foreground/70;
+  }
+
+  .legal-text {
+    @apply text-xs text-muted-foreground leading-relaxed;
+    letter-spacing: 0;
+  }
+
+  .stage-title {
+    @apply text-xl font-bold tracking-tight;
+    letter-spacing: -0.03em;
+  }
+
+  .corporate-card {
+    @apply bg-card rounded-md p-6;
+    box-shadow: var(--shadow-cheap);
+  }
+
+  .input-corporate {
+    @apply w-full border border-input rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-background;
+  }
+}
